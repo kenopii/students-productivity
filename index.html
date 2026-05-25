@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <h1>Student Productivity Dashboard</h1>
+          <p>Manage tasks, focus sessions, and daily study progress.</p>
+        </div>
+        <button class="theme-btn" id="themeToggle">Toggle Dark Mode</button>
+      </header>
+
+      <section class="stats">
+        <div class="stat-box">
+          <h3 id="totalTasks">0</h3>
+          <p>Total Tasks</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="completedTasks">0</h3>
+          <p>Completed</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="focusSessions">0</h3>
+          <p>Focus Sessions</p>
+        </div>
+      </section>
+
+      <main class="grid">
+        <section class="card">
+          <h2>Task Manager</h2>
+
+          <div class="input-row">
+            <input
+              type="text"
+              id="taskInput"
+              placeholder="Enter a new task..."
+            />
+            <input type="date" id="deadlineInput" />
+            <select id="priorityInput">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+            <button id="addTaskBtn">Add</button>
+          </div>
+
+          <div class="filter-row">
+            <select id="filterInput">
+              <option value="All">All Tasks</option>
+              <option value="Active">Active</option>
+              <option value="Completed">Completed</option>
+            </select>
+            <select id="sortInput">
+              <option value="Newest">Newest First</option>
+              <option value="Deadline">Sort by Deadline</option>
+              <option value="Priority">Sort by Priority</option>
+            </select>
+          </div>
+
+          <ul class="task-list" id="taskList"></ul>
+        </section>
+
+        <aside>
+          <section class="card timer">
+            <h2>Timer</h2>
+            <p>Focus for 25 minutes, then take a short break.</p>
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="timer-buttons">
+              <button id="startTimerBtn">Start</button>
+              <button class="secondary-btn" id="pauseTimerBtn">Pause</button>
+              <button class="secondary-btn" id="resetTimerBtn">Reset</button>
+            </div>
+          </section>
+
+          <section class="card goal-card">
+            <h2>Daily Goal</h2>
+            <p id="goalText">Complete 3 tasks today.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="task-meta" id="progressText">0% completed</p>
+          </section>
+        </aside>
+      </main>
+
+      <footer>Hope this helps you focus!</footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
